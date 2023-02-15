@@ -16,6 +16,7 @@ const AboutUs = props => {
   const [imageURL, setImageURL] = useState('')
   const [altText, setAltText] = useState('')
   const [header, setHeader] = useState('')
+  const [imgSize, setImgSize] = useState('')
 
   /**
    * A nested function that fetches messages from the back-end server.
@@ -31,11 +32,13 @@ const AboutUs = props => {
         const imageURL = response.data.imageURL
         const altText = response.data.altText
         const header = response.data.header
+        const imgSize = response.data.imgSize
         console.log(imageURL)
         setParagraphs(messages)
         setImageURL(imageURL)
         setAltText(altText)
         setHeader(header)
+        setImgSize(imgSize)
       })
       .catch(err => {
         setError(err)
@@ -68,7 +71,7 @@ const AboutUs = props => {
       <h1>{`${header}`}</h1>
       
       {paragraphs.map(message => (<p>{message}</p>))}
-      <img  style={{width: "20%", height: "20%"}}
+      <img  style={{width: `${imgSize}`, height: `${imgSize}`}}
       src={`${imageURL}`}
       alt={`${altText}`}
       />

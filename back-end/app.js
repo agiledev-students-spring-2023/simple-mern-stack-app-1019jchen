@@ -51,7 +51,8 @@ app.get('/aboutus', (req, res) => {
   ],
     imageURL: "/photo.jpg",
     header: "About Us!",
-    altText: "My photo."
+    altText: "My photo.",
+    imgSize: "20%"
   })
 });
   
