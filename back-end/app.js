@@ -40,6 +40,23 @@ app.get('/messages', async (req, res) => {
   }
 })
 
+// a route to handle fetching About Us
+
+app.get('/aboutus', (req, res) => {
+  res.json({
+    paragraphs: [
+      "Hi! I'm James. I'm a dynamic and dedicated individual who is pursuing a dual degree in Computer Science and Finance at New York University. I am a talented student and demonstrate my passion for learning and my ability to excel in multiple areas.",
+      "I am also an incoming Software Engineering Intern at McDonald's Corporation, where I will have the opportunity to apply my skills and knowledge to real-world projects and gain valuable industry experience. I am an exceptional communicator and problem solver, and I've already demonstrated my abilities through my work as a TA for Graduate Statistics at Stern and as a Research Assistant in Cryptocurrency and Decentralized Finance.",
+      "In my free time, I enjoy skiing, exercising, and listening to music. I am also a foodie who loves trying new foods and is always on the lookout for his next culinary adventure.",
+      "future URL"
+  ],
+    imageURL: "/photo.jpg"
+  })
+});
+  
+
+app.use('/public', express.static('public'));
+
 // a route to handle fetching a single message by its id
 app.get('/messages/:messageId', async (req, res) => {
   // load all messages from database
