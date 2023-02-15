@@ -49,7 +49,9 @@ app.get('/aboutus', (req, res) => {
       "I am also an incoming Software Engineering Intern at McDonald's Corporation, where I will have the opportunity to apply my skills and knowledge to real-world projects and gain valuable industry experience. I am an exceptional communicator and problem solver, and I've already demonstrated my abilities through my work as a TA for Graduate Statistics at Stern and as a Research Assistant in Cryptocurrency and Decentralized Finance.",
       "In my free time, I enjoy skiing, exercising, and listening to music. I am also a foodie who loves trying new foods and is always on the lookout for his next culinary adventure."
   ],
-    imageURL: "/photo.jpg"
+    imageURL: "/photo.jpg",
+    header: "About Us!",
+    altText: "My photo."
   })
 });
   

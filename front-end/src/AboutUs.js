@@ -14,6 +14,8 @@ const AboutUs = props => {
   const [loaded, setLoaded] = useState(false)
   const [error, setError] = useState('')
   const [imageURL, setImageURL] = useState('')
+  const [altText, setAltText] = useState('')
+  const [header, setHeader] = useState('')
 
   /**
    * A nested function that fetches messages from the back-end server.
@@ -27,9 +29,13 @@ const AboutUs = props => {
         // axios bundles up all response data in response.data property
         const messages = response.data.paragraphs
         const imageURL = response.data.imageURL
+        const altText = response.data.altText
+        const header = response.data.header
         console.log(imageURL)
         setParagraphs(messages)
         setImageURL(imageURL)
+        setAltText(altText)
+        setHeader(header)
       })
       .catch(err => {
         setError(err)
@@ -59,12 +65,12 @@ const AboutUs = props => {
   
   return (
     <>
-      <h1>About me!</h1>
+      <h1>{`${header}`}</h1>
       
       {paragraphs.map(message => (<p>{message}</p>))}
       <img  style={{width: "20%", height: "20%"}}
       src={`${imageURL}`}
-      alt="my photo"
+      alt={`${altText}`}
       />
       
     </>
